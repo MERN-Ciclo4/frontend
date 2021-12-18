@@ -63,7 +63,6 @@ const Inscripcion = ({ inscripcion, refetch }) => {
   useEffect(() => {
     if (data) {
       toast.success('Inscripcion aprobada con exito');
-      refetch();
     }
   }, [data]);
 

@@ -33,7 +33,6 @@ const Profile = () => {
     if (dataMutation) {
       setUserData({ ...userData, foto: dataMutation.editarPerfil.foto });
       toast.success('Perfil modificado con exito');
-      refetch();
     }
   }, [dataMutation]);
 
