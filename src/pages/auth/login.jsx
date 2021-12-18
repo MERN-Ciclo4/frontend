@@ -35,24 +35,24 @@ const Login = () => {
 
   return (
     <div className='flex flex-col items-center justify-center w-full h-full p-10'>
-      <h1 className='text-xl font-bold text-gray-900'>Iniciar sesión</h1>
+      <h1 className='text-xl font-bold text-blue-900'>Aplicación MERN MINTIC 2021</h1>
+      <h1>Iniciar app</h1>
       <form
         className='flex flex-col'
         onSubmit={submitForm}
         onChange={updateFormData}
         ref={form}
       >
-        <Input name='correo' type='email' label='Correo' required />
-        <Input name='password' type='password' label='Contraseña' required />
+        <Input name='correo' type='email' label='Usuario' required />
+        <Input name='password' type='password' label='Password' required />
         <ButtonLoading
           disabled={Object.keys(formData).length === 0}
           loading={mutationLoading}
-          text='Iniciar Sesión'
+          text='Entrar a la app'
         />
       </form>
-      <span>¿No tienes una cuenta?</span>
       <Link to='/auth/register'>
-        <span className='text-blue-700'>Regístrate</span>
+        <span className='text-blue-700'>Regístrate en nuestra aplicación</span>
       </Link>
     </div>
   );
