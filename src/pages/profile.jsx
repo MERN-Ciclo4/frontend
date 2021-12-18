@@ -19,7 +19,7 @@ const Profile = () => {
     useMutation(EDITAR_PERFIL);
 
   // falta capturar error de query
-  const {
+/*   const {
     data: queryData,
     loading: queryLoading,
    
@@ -27,7 +27,7 @@ const Profile = () => {
     variables: {
       _id: userData._id,
     },
-  });
+  }); */
 
 /*   useEffect(() => {
     if (dataMutation) {
