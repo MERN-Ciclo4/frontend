@@ -19,7 +19,7 @@ const Profile = () => {
     useMutation(EDITAR_PERFIL);
 
   // falta capturar error de query
-/*   const {
+  const {
     data: queryData,
     loading: queryLoading,
    
@@ -27,14 +27,14 @@ const Profile = () => {
     variables: {
       _id: userData._id,
     },
-  }); */
+  });
 
-/*   useEffect(() => {
+  useEffect(() => {
     if (dataMutation) {
       setUserData({ ...userData, foto: dataMutation.editarPerfil.foto });
       toast.success('Perfil modificado con exito');
     }
-  }, [dataMutation]); */
+  }, [dataMutation]);
 
   const submitForm = async (e) => {
     e.preventDefault();
