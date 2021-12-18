@@ -22,7 +22,7 @@ const Profile = () => {
   const {
     data: queryData,
     loading: queryLoading,
-   
+    refetch,
   } = useQuery(GET_USUARIO, {
     variables: {
       _id: userData._id,
@@ -33,6 +33,7 @@ const Profile = () => {
     if (dataMutation) {
       setUserData({ ...userData, foto: dataMutation.editarPerfil.foto });
       toast.success('Perfil modificado con exito');
+      refetch();
     }
   }, [dataMutation]);
 
@@ -49,18 +50,22 @@ const Profile = () => {
     });
   };
 
-  if (queryLoading) return <div>Loading...</div>;
+  if (queryLoading) return <div data-testid='loading'>Loading...</div>;
 
   return (
     <div className='p-10 flex flex-col items-center justify-center w-full'>
-      <h1 className='font-bold text-2xl text-gray-900'>Perfil del usuario</h1>
+      <h1 className='font-bold text-2xl text-gray-900' data-testid='perfil'>
+        Perfil del usuario
+      </h1>
       <form ref={form} onChange={updateFormData} onSubmit={submitForm}>
+        <input placeholder='nombre' name='name' data-testid='name-input' />
         <Input
           defaultValue={queryData.Usuario.nombre}
           label='Nombre'
           name='nombre'
           type='text'
           required
+          aria-label='input-nombre'
         />
         <Input
           defaultValue={queryData.Usuario.apellido}
@@ -104,6 +109,7 @@ const Profile = () => {
           </div>
         )}
         <ButtonLoading
+          data-testid='buttonLoading'
           text='Confirmar'
           loading={loadingMutation}
           disabled={false}
