@@ -47,9 +47,9 @@ const Logout = () => {
 
 const Logo = () => (
   <div className='py-3 w-full flex flex-col items-center justify-center'>
-    <img src='logo.png' alt='Logo' className='h-16' />
+    <img src='mern_logo.png' alt='Logo' className='h-16' />
     <span className='my-2 text-xl font-bold text-center'>
-      Título de Mi Aplicación
+      Gestión de Proyectos MERN
     </span>
   </div>
 );
@@ -57,7 +57,7 @@ const Logo = () => (
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
   return (
-    <div className='flex flex-col md:flex-row flex-no-wrap md:h-full'>
+    <div className='flex flex-col md:flex-row flex-no-wrap bg-green-700 md:h-full'>
       {/* Sidebar starts */}
 
       <div className='sidebar hidden md:flex'>
@@ -66,7 +66,7 @@ const Sidebar = () => {
           <SidebarLinks />
         </div>
       </div>
-      <div className='flex md:hidden w-full justify-between bg-gray-800 p-2 text-white'>
+      <div className='flex md:hidden w-full justify-between bg-yellow-800 p-2 text-white'>
         <button type='button' onClick={() => setOpen(!open)}>
           <i className={`fas fa-${open ? 'times' : 'bars'}`} />
         </button>
@@ -98,8 +98,8 @@ const SidebarRoute = ({ to, title, icon }) => (
       to={to}
       className={({ isActive }) =>
         isActive
-          ? 'sidebar-route text-white bg-indigo-700'
-          : 'sidebar-route text-gray-900 hover:text-white hover:bg-indigo-400'
+          ? 'sidebar-route text-white bg-green-700'
+          : 'sidebar-route text-gray-900 hover:text-white hover:bg-green-400'
       }
     >
       <div className='flex items-center'>
@@ -117,8 +117,8 @@ const SidebarRouteImagen = ({ to, title, icon }) => {
         to={to}
         className={({ isActive }) =>
           isActive
-            ? 'sidebar-route text-white bg-indigo-700'
-            : 'sidebar-route text-gray-900 hover:text-white hover:bg-indigo-400'
+            ? 'sidebar-route text-white bg-green-700'
+            : 'sidebar-route text-gray-900 hover:text-white hover:bg-green-400'
         }
       >
         <div className='flex items-center'>
