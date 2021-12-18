@@ -22,19 +22,19 @@ const Profile = () => {
   const {
     data: queryData,
     loading: queryLoading,
-    refetch,
+   
   } = useQuery(GET_USUARIO, {
     variables: {
       _id: userData._id,
     },
   });
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (dataMutation) {
       setUserData({ ...userData, foto: dataMutation.editarPerfil.foto });
       toast.success('Perfil modificado con exito');
     }
-  }, [dataMutation]);
+  }, [dataMutation]); */
 
   const submitForm = async (e) => {
     e.preventDefault();
