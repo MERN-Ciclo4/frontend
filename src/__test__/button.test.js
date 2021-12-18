@@ -1,37 +1,38 @@
 import React from 'react';
 import ButtonLoading from 'components/ButtonLoading';
 import { render, screen } from '@testing-library/react';
-it('renders okay', () => {
-  render(<ButtonLoading text='hola' loading={false} disabled={false} />);
+
+it('renderiza bien', () => {
+  render(<ButtonLoading text='prueba' loading={false} disabled={false} />);
   expect(screen.getByTestId('button-loading')).toBeInTheDocument();
 });
 
-it('shows text when not loading', () => {
-  render(<ButtonLoading text='hola' loading={false} disabled={false} />);
-  expect(screen.getByTestId('button-loading')).toHaveTextContent('hola');
+it('Muestra el texto cuando carga', () => {
+  render(<ButtonLoading text='prueba' loading={false} disabled={false} />);
+  expect(screen.getByTestId('button-loading')).toHaveTextContent('prueba');
 });
 
-it('doesnt show text when loading', () => {
-  render(<ButtonLoading text='hola' loading={true} disabled={false} />);
-  expect(screen.getByTestId('button-loading')).not.toHaveTextContent('hola');
+it('No muestra el texto cuando carga', () => {
+  render(<ButtonLoading text='prueba' loading={true} disabled={false} />);
+  expect(screen.getByTestId('button-loading')).not.toHaveTextContent('prueba');
 });
 
-it('shows loading component when loading', () => {
-  render(<ButtonLoading text='hola' loading={true} disabled={false} />);
+it('muestra el componente de cargar cuando está cargando', () => {
+  render(<ButtonLoading text='prueba' loading={true} disabled={false} />);
   expect(screen.getByTestId('loading-in-button')).toBeInTheDocument();
 });
 
-it('is disabled when prop is passed', () => {
-  render(<ButtonLoading text='hola' loading={true} disabled={true} />);
+it('esta desactivado cuando los prop pasaron', () => {
+  render(<ButtonLoading text='prueba' loading={true} disabled={true} />);
   expect(screen.getByTestId('button-loading')).toHaveAttribute('disabled');
 });
 
-it('is enabled when disabled prop is passed as false', () => {
-  render(<ButtonLoading text='hola' loading={true} disabled={false} />);
+it('esta desactivado cuando los prop pasaron', () => {
+  render(<ButtonLoading text='prueba' loading={true} disabled={false} />);
   expect(screen.getByTestId('button-loading')).not.toHaveAttribute('disabled');
 });
 
-it('loads the svg html when loading is activated', () => {
-  render(<ButtonLoading text='hola' loading={true} disabled={false} />);
+it('carga el svg html cuando loadins está desactivado', () => {
+  render(<ButtonLoading text='prueba' loading={true} disabled={false} />);
   expect(screen.getByTestId('button-loading')).toMatchSnapshot();
 });
