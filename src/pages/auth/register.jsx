@@ -34,7 +34,7 @@ const Register = () => {
 
   return (
     <div className='flex flex-col h-full w-full items-center justify-center'>
-      <h1 className='text-3xl font-bold my-4'>Regístrate</h1>
+      <h1 className='text-3xl font-bold my-4'>Página de Registro</h1>
       <form
         className='flex flex-col'
         onSubmit={submitForm}
@@ -45,13 +45,13 @@ const Register = () => {
           <Input label='Nombre:' name='nombre' type='text' required />
           <Input label='Apellido:' name='apellido' type='text' required />
           <Input
-            label='Documento:'
+            label='Identificación:'
             name='identificacion'
             type='text'
             required
           />
           <DropDown
-            label='Rol deseado:'
+            label='Rol:'
             name='rol'
             required
             options={Enum_Rol}
@@ -62,10 +62,9 @@ const Register = () => {
         <ButtonLoading
           disabled={Object.keys(formData).length === 0}
           loading={false}
-          text='Registrarme'
+          text='Inscripción'
         />
       </form>
-      <span>¿Ya tienes una cuenta?</span>
       <Link to='/auth/login'>
         <span className='text-blue-700'>Inicia sesión</span>
       </Link>
