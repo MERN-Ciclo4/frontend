@@ -13,7 +13,7 @@ const uploadFormData = async (formData) => {
         dt.append('cloud_name', 'danyel117');
         const options = {
           method: 'POST',
-          url: 'http://localhost:4000/graphql',
+          url: 'https://frontend-edier.herokuapp.com/graphql',
           data: dt,
         };
         await axios.request(options).then((response) => {
