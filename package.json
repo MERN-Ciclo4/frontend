@@ -30,13 +30,13 @@
     "node": "14.x"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
-    },
+    "lint": "eslint --ext .js,.jsx .",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
