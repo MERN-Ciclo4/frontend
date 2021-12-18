@@ -30,7 +30,7 @@ import Profile from 'pages/profile';
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
-  uri: 'https://frontend-edier.herokuapp.com/graphql',
+  uri: 'https://backend-edier.herokuapp.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
